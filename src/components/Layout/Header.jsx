@@ -95,8 +95,8 @@ const Header = ({ activeHeading }) => {
             ) : null}
           </div>
 
-          {user?.role !== "user" ||
-            (user?.role !== "Admin" && (
+          {(user?.role !== "user" ||
+            user?.role !== "Admin") && (
               <div className={`${styles.button}`}>
                 <Link to={`${isSeller ? "/dashboard" : "/shop-create"}`}>
                   <h1 className="text-[#fff] flex items-center">
@@ -105,7 +105,7 @@ const Header = ({ activeHeading }) => {
                   </h1>
                 </Link>
               </div>
-            ))}
+            )}
           {user?.role === "Admin" && (
             <div className="border border-blue-500 rounded text-blue-500 font-semibold hover:text-white hover:bg-blue-500 px-5 py-2 ">
               <Link to={`/admin/dashboard`}>
@@ -119,9 +119,8 @@ const Header = ({ activeHeading }) => {
         </div>
       </div>
       <div
-        className={`${
-          active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-        } transition hidden 800px:flex items-center justify-between w-full bg-[#3321c8] h-[70px]`}
+        className={`${active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
+          } transition hidden 800px:flex items-center justify-between w-full bg-[#3321c8] h-[70px]`}
       >
         <div
           className={`${styles.section} relative ${styles.noramlFlex} justify-between`}
@@ -215,9 +214,8 @@ const Header = ({ activeHeading }) => {
 
       {/* mobile header */}
       <div
-        className={`${
-          active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
-        }
+        className={`${active === true ? "shadow-sm fixed top-0 left-0 z-10" : null
+          }
       w-full h-[60px] bg-[#fff] z-50 top-0 left-0 shadow-sm 800px:hidden`}
       >
         <div className="w-full flex items-center justify-between">
