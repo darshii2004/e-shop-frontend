@@ -17,7 +17,7 @@ const ShopLogin = () => {
 
     await axios
       .post(
-        `http://localhost:5000/api/v2/shop/login-shop`,
+        `https://e-shop-backend-da7p.onrender.com/api/v2/shop/login-shop`,
         {
           email,
           password,
